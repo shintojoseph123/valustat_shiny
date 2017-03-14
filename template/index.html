@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+      <!-- slider -->
+      <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> -->
+      <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+      <link rel="stylesheet" href="static/css/jquery-ui.css">
+      <!-- <link rel="stylesheet" href="static/css/styles.css"> -->
+      <link rel="stylesheet" href="static/css/styles.css">
+
+
+      <!-- slider end -->
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" type="image/png" href="static/assets/img/favicon.png">
+        <title>Valustat</title>
+
+        <!-- CSS
+        ===============================================================-->
+        <!-- Bootstrap Core CSS -->
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Icons -->
+        <link href="static/assets/css/font-awesome.min.css" rel="stylesheet">
+        <!-- Flex Slider -->
+        <link rel="stylesheet" href="static/assets/css/flexslider.css">
+        <!-- Change color theme -->
+        <link href="static/assets/css/style-switcher.css" rel="stylesheet">
+        <!-- Template CSS -->
+        <link href="static/assets/css/main.css" id="theme" rel="stylesheet">
+        <!-- Animation -->
+        <link href="static/assets/css/animate.min.css" rel="stylesheet">
+        <!-- Slick Carousel -->
+        <link href="static/assets/css/slick.css" rel="stylesheet">
+        <!-- Select Style -->
+        <link href="static/assets/css/bootstrap-select.min.css" rel="stylesheet">
+
+
+
+          <!-- single range slider -->
+
+          <!-- bin/jquery.slider.min.css -->
+        	<link rel="stylesheet" href="static/assets/css/jslider.css" type="text/css">
+        	<link rel="stylesheet" href="static/assets/css/jslider.blue.css" type="text/css">
+        	<link rel="stylesheet" href="static/assets/css/jslider.plastic.css" type="text/css">
+        	<link rel="stylesheet" href="static/assets/css/jslider.round.css" type="text/css">
+        	<link rel="stylesheet" href="static/assets/css/jslider.round.plastic.css" type="text/css">
+          <!-- end -->
+
+        	<script type="text/javascript" src="static/assets/js/jquery-1.7.1.js"></script>
+
+        	<!-- bin/jquery.slider.min.js -->
+        	<script type="text/javascript" src="static/assets/js/jshashtable-2.1_src.js"></script>
+        	<script type="text/javascript" src="static/assets/js/jquery.numberformatter-1.2.3.js"></script>
+        	<script type="text/javascript" src="static/assets/js/tmpl.js"></script>
+        	<script type="text/javascript" src="static/assets/js/jquery.dependClass-0.1.js"></script>
+        	<script type="text/javascript" src="static/assets/js/draggable-0.1.js"></script>
+        	<script type="text/javascript" src="static/assets/js/jquery.slider.js"></script>
+          <!-- end -->
+          <!-- single range slider -->
+
+
+
+
+
+
+
+    </head>
+
+    <body>
+
+
+
+        <!-- NAVBAR
+        ===============================================================-->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="static/assets/img/logo.png" alt="Logo"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="">Home</a></li>
+                        <li >
+                            <a href="http://valustat.co/" >Services</a>
+
+                        </li>
+                        <li ><a href="http://valustat.co/">Team </a></li>
+
+                        <li><a href="http://valustat.co/">Blog </a></li>
+                        <li class="dropdown">
+                            <a href="http://valustat.co/" >Careers </a>
+
+                        </li>
+                        <li><a href="http://valustat.co/">Careers</a></li>
+                        <li class="dropdown">
+                            <a href="http://valustat.co/">Contact </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- BREADCRUMB important-->
+        <div class="breadcrumb-container">
+            <div class="container text-right">
+                <ol class="breadcrumb">
+                    <!-- <li><a href="index.html">Home</a></li>
+                    <li class="active">Services <i class="fa fa-arrow-down ml5"></i></li> -->
+                </ol>
+            </div>
+        </div>
+
+        <!-- input slider section important-->
+        <section class="bg-white">
+            <!-- CORPORATE -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2>Risk Simulation</h2>
+                        </div>
+                    </div>
+                    <br><br><br><br><br><br><br><br>
+
+                    
+
+                    <form method="post" id="valustatform">
+
+                      {% csrf_token %}
+
+
+
+                    <div class="col-sm-12 col-md-6 col-lg-6 wow fadeIn" data-wow-duration="1200ms" data-wow-delay="100ms">
+          <!-- 5 sliders here -->
+
+      <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="100ms">
+              <div class="col-xs-10 servdesc">
+
+
+          <h5>Initial capital invested :</h5>
+          <br><br>
+          <!-- <input  value="100000;5000000" /> -->
+
+          <div class="layout-slider">
+            <input id="capital" type="slider" name="capital" value="5000000" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#capital").slider({
+              from: 100000,
+              to:10000000,
+              scale: ["$100000", '|', "$2500000", '|' , "$5000000", '|', "$7500000", '|', "$10000000"],
+          	  limits: true,
+               step: 10,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;$',
+                skin: "classic",
+
+              });
+          </script>
+
+        </div>
+    </div>
+
+          <br><br>
+
+      <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="200ms">
+              <div class="col-xs-10 servdesc">
+
+
+          <h5>Monthly Capital Withdrawals:</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="1000;10000" /> -->
+
+          <div class="layout-slider">
+            <input id="monthly_return" type="slider" name="monthly_return" value="10000" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#monthly_return").slider({
+              from: 1000,
+              to:100000,
+               step: 10,
+               scale: ["$1000", '|', "$25000", '|' , "$50000", '|', "$75000", '|', "$100000"],
+           	  limits: true,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;$',
+                skin: "classic"
+              });
+          </script>
+        </div>
+      </div>
+
+          <br><br>
+    <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="300ms">
+              <div class="col-xs-10 servdesc">
+
+
+
+          <h5>Investment Horizon / Time to Goal:</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="0;20" /> -->
+
+          <div class="layout-slider">
+            <input id="n_ob" type="slider" name="n_ob" value="20" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#n_ob").slider({
+              from: 0,
+              to:40,
+              scale: ["0", '|', "10", '|' , "20", '|', "30", '|', "40"],
+          	  limits: true,
+               step: 1,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+          <br><br>
+
+
+    <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="400ms">
+        <div class="col-xs-10 servdesc">
+
+
+          <h5>Annual investment return (in %):</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="0;5" /> -->
+          <div class="layout-slider">
+            <input id="return" type="slider" name="return" value="5" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#return").slider({
+              from: 1,
+              to:40,
+              scale: ["1%", '|', "10%", '|' , "20%", '|', "30%", '|', "40%"],
+          	  limits: true,
+               step: 1,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;%',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+          <br><br>
+
+    <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="500ms">
+              <div class="col-xs-10 servdesc">
+
+          <h5>Annual investment volatility (in %):</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="0;7" /> -->
+
+          <div class="layout-slider">
+            <input id="investment_volatility" type="slider" name="investment_volatility" value="7" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#investment_volatility").slider({
+              from: 0,
+              to:30,
+               step: 1,
+               scale: ["0%", '|', "7%", '|' , "15%", '|', "22%", '|', "30%"],
+           	  limits: true,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;%',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+          <br><br>
+
+
+
+            <!-- 5 sliders end here -->
+                    </div>
+
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+          <!-- 5 sliders here -->
+
+    <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="100ms">
+              <div class="col-xs-10 servdesc">
+
+
+          <h5>Annual inflation (in %):</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="0;2.5" /> -->
+
+          <div class="layout-slider">
+            <input id="inflation" type="slider" name="inflation" value="3" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#inflation").slider({
+              from: 0,
+              to:20,
+              scale: ["0%", '|', "5%", '|' , "10%", '|', "15%", '|', "20%"],
+              limits: true,
+               step: 1,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;%',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+          <br><br>
+
+
+      <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="200ms">
+              <div class="col-xs-10 servdesc">
+
+          <h5>Annual inflation volatility (in %) :</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="0;1.5" /> -->
+
+          <div class="layout-slider">
+            <input id="inflation_volatility" type="slider" name="inflation_volatility" value="2" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#inflation_volatility").slider({
+              from: 1,
+              to:5,
+              scale: ["", '|', "", '|' , "", '|', "", '|', ""],
+          	  limits: true,
+               step: 1,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;%',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+          <br><br>
+
+     <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="300ms">
+              <div class="col-xs-10 servdesc">
+
+
+          <h5>Number of simulations:</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="0;200" /> -->
+          <div class="layout-slider">
+            <input id="n_sim" type="slider" name="n_sim" value="200" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#n_sim").slider({
+              from: 1,
+              to:2000,
+              scale: ["0", '|', "500", '|' , "1000", '|', "1500", '|', "2000"],
+          	  limits: true,
+               step: 1,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+
+          <br><br>
+
+    <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="400ms">
+              <div class="col-xs-10 servdesc">
+
+          <h5>Investment Goal Objective :</h5>
+          <br><br>
+          <!-- <input id="" type="slider" name="" value="100000;5000000" /> -->
+
+          <div class="layout-slider">
+            <input id="future_value" type="slider" name="future_value" value="5000000" />
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            jQuery("#future_value").slider({
+              from: 100000,
+              to:10000000,
+              scale: ["$100000", '|', "$2500000", '|' , "$5000000", '|', "$7500000", '|', "$10000000"],
+          	  limits: true,
+               step: 1,
+               round: 1,
+               format: { format: '##.0', locale: 'de' },
+                dimension: '&nbsp;$',
+                skin: "classic"
+              });
+          </script>
+
+        </div>
+    </div>
+          <br><br>
+
+      <div class="row wow fadeInRight" data-wow-duration="600ms" data-wow-delay="500ms">
+              <div class="col-xs-10 servdesc">
+                <br><br><br><br><br>
+                <div class="send">
+
+                <!-- button style div -->
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-6 col-md-offset-3">
+                        <button onclick="Submit()" id="button" type="button" class="btn btn-primary" data-loading-text="Loading..." >Re-Run Simulation</button>
+                      </div>
+                    </div>
+                  </div>
+                <!-- button style div -->
+              </div>
+
+        </div>
+    </div>
+          <br><br><br><br><br>
+
+            <!-- 5 sliders end here -->
+
+
+
+
+            <br>
+            </form>
+
+
+
+<!-- </form> -->
+<!-- submit form end -->
+
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <!-- Graph Section important-->
+
+
+        <section class="bg-white">
+            <!-- <div class="container"> -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-r">
+                            <h2>Graphs</h2>
+                        </div>
+                    </div>
+
+
+
+            <!-- left graph -->
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+
+                        <div class="row wow fadeInLeft" data-wow-duration="600ms" data-wow-delay="100ms">
+                            <div class="col-xs-0 servdesc">
+
+                              <div class="container">
+                                <div class="row">
+
+                                <!-- spline graph -->
+                                  <div class=""><div id="spline_graph" style="width:700px; height:200px;">{{plot|safe}}</div></div>
+
+                                  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                                <!-- guage graph -->
+                                  <div id="gauge" ></div>
+
+                                </div>
+                              </div>
+
+                            </div>
+                        </div>
+                  </div>
+
+          <!-- right table -->
+
+                    <div class="col-sm-12 col-md-6 col-lg-6 wow fadeIn" data-wow-duration="1200ms" data-wow-delay="100ms">
+
+                      <div class="container">
+                        <div class="row">
+
+                        <!-- percent table graph -->
+                          <div class=""><div id="percent_graph" style="width: 700px; height: 400px;">{{plot|safe}}</div></div>
+
+                        <br><br><br><br><br><br><br><br><br><br>
+
+                        <!-- percentage table -->
+                          <div class=""><div id="percent_table" style="width: 650px; height: 200px;">{{plot|safe}}</div></div>
+
+                        </div>
+                      </div>
+
+                    </div>
+                </div>
+            <!-- </div> -->
+        </section>
+
+
+
+        <!-- FOOTER
+        ===============================================================-->
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="footer-widget col-sm-12 col-md-4">
+                            <h3>About us</h3>
+                            <p><a href="about.html">Valustat</a>, is tellus ac cursus commodo, mauesris condime ntum nibh, ut fermentum mas justo sitters.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-map-marker"></i> 8578 NW 70th Street, 33166, Miami - Florida, USA</li>
+                                <li class="number"><i class="fa fa-phone"></i> (+385) 593 6888</li>
+                                <li><i class="fa fa-envelope"></i> support@templatespremium.net</li>
+                                <li><i class="fa fa-skype"></i> Valustat</li>
+                            </ul>
+                            <div class="visible-xs-block visible-sm-block pt20"></div>
+                        </div>
+                        <div class="footer-widget col-sm-6 col-md-4">
+                            <h3>Photo Gallery</h3>
+                            <a href="static/assets/img/gall1.jpg" class="gallery" title="Photo Gallery 1">
+                                <img src="static/assets/img/gall1.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall2.jpg" class="gallery" title="Photo Gallery 2">
+                                <img src="static/assets/img/gall2.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall3.jpg" class="gallery" title="Photo Gallery 3">
+                                <img src="static/assets/img/gall3.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall4.jpg" class="gallery" title="Photo Gallery 4">
+                                <img src="static/assets/img/gall4.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall5.jpg" class="gallery" title="Photo Gallery 5">
+                                <img src="static/assets/img/gall5.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall6.jpg" class="gallery" title="Photo Gallery 6">
+                                <img src="static/assets/img/gall6.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall7.jpg" class="gallery" title="Photo Gallery 7">
+                                <img src="static/assets/img/gall7.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="assets/img/gall8.jpg" class="gallery" title="Photo Gallery 8">
+                                <img src="static/assets/img/gall8.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="assets/img/gall9.jpg" class="gallery" title="Photo Gallery 9">
+                                <img src="static/assets/img/gall9.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall10.jpg" class="gallery" title="Photo Gallery 10">
+                                <img src="static/assets/img/gall10.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall1.jpg" class="gallery" title="Photo Gallery 11">
+                                <img src="static/assets/img/gall1.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <a href="static/assets/img/gall2.jpg" class="gallery" title="Photo Gallery 12">
+                                <img src="static/assets/img/gall2.jpg" alt="Gallery thumbnail">
+                            </a>
+                            <div class="visible-xs-block visible-sm-block pt20"></div>
+                        </div>
+                        <div class="footer-widget col-sm-6 col-md-4">
+                            <h3>Newsletter Registration</h3>
+                            <p>Subscribe today to receive the latest <strong>Valustat</strong> news via email. You may unsubscribe from this service at any time.</p>
+                            <!-- Newsletter Form-->
+                            <form method="get">
+                                <div class="input-group newsletter">
+                                    <label class="sr-only" for="subscribe-email">Enter your email...</label>
+                                    <input type="email" class="form-control" id="subscribe-email" placeholder="Enter your email...">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn"><i class="fa fa-paper-plane-o"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                            <p class="newsletter-desc"><strong>No spam:</strong> consectetur adipisicing elit lorem ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 social">
+                            <ul class="list-inline social">
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 credits">
+                            <p>&copy; VALUSTAT 2017. All Rights Reserved.</p>
+                            <!-- <p class="small">
+                                <i class="fa fa-angle-right"></i>
+                                Designed by: <a href="../../index.html" target="_blank"></a>
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--back to top-->
+            <a href="services.html#" class="scrollToTop"><i class="fa fa-angle-up"></i></a>
+        </footer>
+
+        <script src="static/assets/plotly/plotly-latest.min.js"></script>
+
+
+        <script src="static/assets/js/bootstrap.min.js"></script>
+
+
+        <!-- slider end -->
+
+
+        <!-- ajax start -->
+
+
+        <!-- working final script -->
+
+        <script>
+
+
+      function Submit() {
+
+
+
+          // var n = Math.floor((Math.random() * 10) + 1);
+
+          var formData = new FormData($('#valustatform')[0]);
+          // alert(formData);
+          // console.log(formData);
+
+          $.ajax({
+            url: "{% url 'plotly_ajax' %}",
+            // type: 'get', // This is the default though, you don't actually need to always mention it
+
+            // url: "{% url 'index' %}",
+            type: 'POST',
+            data: formData,
+            async: true,
+            cache: false,
+            contentType: false,
+            processData: false,
+
+
+            success: function(data) {
+
+              // alert("returned to ajax");
+
+
+              var percent_table =data.percent_table ;
+              var percent_graph =data.percent_graph ;
+              var spline_graph =data.spline_graph ;
+              // guage
+              var prob_percent =data.prob_percent ;
+              var out =data.out ;
+
+
+                // alert(percent_table);
+                // alert(percent_graph);
+                // alert(spline_graph);
+                // alert(prob_percent);
+                // alert(out);
+
+
+        // gauge graph
+
+                // Enter a speed between 0 and 180
+
+                var level = out;
+                var out = prob_percent;
+
+                // Trig to calc meter point
+                var degrees = 180 - level,
+                     radius = .5;
+                var radians = degrees * Math.PI / 180;
+                var x = radius * Math.cos(radians);
+                var y = radius * Math.sin(radians);
+
+                // Path: may have to change to create a better triangle
+                var mainPath = 'M -.0 -0.025 L .0 0.025 L ',
+                     pathX = String(x),
+                     space = ' ',
+                     pathY = String(y),
+                     pathEnd = ' Z';
+                var path = mainPath.concat(pathX,space,pathY,pathEnd);
+
+                var data = [{ type: 'scatter',
+                   x: [0], y:[0],
+                    marker: {size: 28, color:'850000'},
+                    showlegend: false,
+                    name: 'Percentage',
+                    text: out,
+                    hoverinfo: 'text+name'},
+                  { values: [50/5, 50/5, 50/5, 50/5, 50/5, 0, 50],
+                  rotation: 90,
+                  text: ['81-100', '61-80', '41-60', '21-40',
+                            '0-20', 'Super Slow', ''],
+                  textinfo: 'text',
+                  textposition:'inside',
+                  marker: {colors:['rgba(14, 127, 0, .5)', 'rgba(110, 154, 22, .5)',
+                                         'rgba(170, 202, 42, .5)', 'rgba(202, 209, 95, .5)',
+                                         'rgba(210, 206, 145, .5)', 'rgba(232, 226, 202, .5)',
+                                         'rgba(255, 255, 255, 0)']},
+                  labels: [ '81-100', '61-80', '41-60', '21-40', '0-20', ''],
+                  hoverinfo: 'label',
+                  hole: .5,
+                  type: 'pie',
+                  showlegend: false
+                }];
+
+                var layout = {
+                  shapes:[{
+                      type: 'path',
+                      path: path,
+                      fillcolor: '850000',
+                      line: {
+                        color: '850000'
+                      }
+                    }],
+                  title: '<b>Goal Probability Given Allocation</b> ',
+                  height: 00,
+                  width: 700,
+                  xaxis: {zeroline:false, showticklabels:false,
+                             showgrid: false, range: [-1, 1]},
+                  yaxis: {zeroline:false, showticklabels:false,
+                             showgrid: false, range: [-1, 1]}
+                };
+
+                Plotly.newPlot('gauge', data, layout);
+
+        // end of guage chart
+
+                $('#spline_graph').empty().append(spline_graph);
+
+                $('#percent_graph').empty().append(percent_graph);
+
+                $('#percent_table').empty().append(percent_table);
+
+            },
+            failure: function(data) {
+                alert('Got an error dude!');
+                btn.button('reset');
+            }
+          });
+
+        }
+        </script>
+
+        <!-- working final script -->
+
+
+
+
+
+
+
+
+
+        <!-- JAVASCRIPT
+        ===============================================================-->
+
+        <!-- Animation -->
+        <script src="static/assets/js/wow.min.js"></script>
+        <!-- Main -->
+        <script src="static/assets/js/main.js"></script>
+
+
+    </body>
+</html>

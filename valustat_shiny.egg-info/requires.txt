@@ -1,0 +1,6 @@
+django==1.9.6
+numpy==1.11.3
+plotly==1.12.12
+pytz==2016.10
+requests==2.12.5
+six==1.10.0

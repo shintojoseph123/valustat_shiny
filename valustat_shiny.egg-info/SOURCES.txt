@@ -1,0 +1,10 @@
+setup.py
+valustat_shiny/__init__.py
+valustat_shiny/settings.py
+valustat_shiny/urls.py
+valustat_shiny/wsgi.py
+valustat_shiny.egg-info/PKG-INFO
+valustat_shiny.egg-info/SOURCES.txt
+valustat_shiny.egg-info/dependency_links.txt
+valustat_shiny.egg-info/requires.txt
+valustat_shiny.egg-info/top_level.txt

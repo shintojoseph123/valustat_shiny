@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Slider test</title>
+  <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0"/>
+  <link rel="stylesheet" href="http://egorkhmelev.github.com/jslider/plugins/google-code-prettify/prettify.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="http://egorkhmelev.github.com/jslider/css/bootstrap.min.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="http://egorkhmelev.github.com/jslider/css/jquery.slider.min.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="http://egorkhmelev.github.com/jslider/css/main.css" type="text/css" charset="utf-8">
+  <!-- end CSS-->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://egorkhmelev.github.com/jslider/plugins/google-code-prettify/prettify.js"></script>
+  <script type="text/javascript" src="http://egorkhmelev.github.com/jslider/js/jquery.slider.min.js"></script>
+  <script type="text/javascript" src="http://egorkhmelev.github.com/jslider/js/main.js"></script>
+</head>
+<body>
+    <div class="holder" style="margin-left:400px;margin-right:400px;">
+  <input id="price-slider" type="slider" name="price" value="100000;5000000" />
+  </div>
+
+
+
+<!-- slider test new -->
+<link rel="stylesheet" type="text/css" href="/static/css/slideControl.css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.slideControl.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.slideControl').slideControl();
+  // prettyPrint();
+});
+</script>
+<!-- slider test new -->
+
+
+<div class="content">
+  <ul class="clearfix">
+    <li><input type="text" value="6.0" class="slideControl" maxlength="3" /></li>
+    <li><label>Bar: </label><input type="text" value="4.0" class="slideControl" maxlength="3" /></li>
+    <li><label>FooBar: </label><input type="text" value="9.0" class="slideControl" maxlength="3" /></li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  // How to set a minimum range of $10,
+  // and how to set $0 rather than $ as the minimum?
+  var options = {
+	  from: 100000,
+	  to: 10000000,
+	  round: 10,
+	  heterogeneity: [],
+	  scale: ["$100000", '|', "$2500000", '|' , "$5000000", '|', "$7500000", '|', "$10000000"],
+	  limits: true,
+	  step: 10,
+	  format: { format: '$#,' },
+	  skin: "round_plastic",
+    onStateChange: function(value) {
+      var min = parseInt(value.split(";")[0]);
+      var max = parseInt(value.split(";")[1]);
+      if ((max-min) < 100) {
+        // Can't implement a minimum range  using return false, or by setting values manually?
+        //$('.holder').slider("value",'100','120');
+        return false;
+      }
+    }
+	};
+  jQuery("#price-slider").slider(options);
+
+});
+
+
+
+
+
+</script>
